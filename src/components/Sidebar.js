@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Tab, Nav, Button, Modal } from "react-bootstrap";
 import Conversations from "./Conversations";
 import Contacts from "./Contacts";
-import NewConversationModal from "./NewConversationModal";
 import NewContactModal from "./NewContactModal";
+import NewConversationModal from "./NewConversationModal";
 
 const CONVERSATIONS_KEY = "conversations";
 const CONTACTS_KEY = "contacts";
@@ -40,9 +40,10 @@ export default function Sidebar({ id }) {
 					Your Id: <span className="text-muted">{id}</span>
 				</div>
 				<Button onClick={() => setModalOpen(true)} className="rounded-0">
-					New {conversationsOpen ? "Conversation" : "Contact"}{" "}
+					New {conversationsOpen ? "Conversation" : "Contact"}
 				</Button>
 			</Tab.Container>
+
 			<Modal show={modalOpen} onHide={closeModal}>
 				{conversationsOpen ? (
 					<NewConversationModal closeModal={closeModal} />

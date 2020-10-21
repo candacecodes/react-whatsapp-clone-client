@@ -9,12 +9,14 @@ export default function NewContactModal({ closeModal }) {
 
 	function handleSubmit(e) {
 		e.preventDefault();
+
 		createContact(idRef.current.value, nameRef.current.value);
 		closeModal();
 	}
+
 	return (
 		<>
-			<Modal.Header closeButton> Create Contact</Modal.Header>
+			<Modal.Header closeButton>Create Contact</Modal.Header>
 			<Modal.Body>
 				<Form onSubmit={handleSubmit}>
 					<Form.Group>
@@ -22,7 +24,7 @@ export default function NewContactModal({ closeModal }) {
 						<Form.Control type="text" ref={idRef} required />
 					</Form.Group>
 					<Form.Group>
-						<Form.Label>name</Form.Label>
+						<Form.Label>Name</Form.Label>
 						<Form.Control type="text" ref={nameRef} required />
 					</Form.Group>
 					<Button type="submit">Create</Button>
